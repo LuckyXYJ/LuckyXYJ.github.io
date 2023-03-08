@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OC_RunLoop | LuckyXYJ</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="shortcut icon" type="image/x-icon" href="/logo.svg">
+    <meta name="description" content="--------">
+    
+    <link rel="preload" href="/assets/css/0.styles.60aa9f3b.css" as="style"><link rel="preload" href="/assets/js/app.405a0211.js" as="script"><link rel="preload" href="/assets/js/2.7f06bbfc.js" as="script"><link rel="preload" href="/assets/js/18.8b865739.js" as="script"><link rel="prefetch" href="/assets/js/10.70343278.js"><link rel="prefetch" href="/assets/js/11.9caabbe4.js"><link rel="prefetch" href="/assets/js/12.0a4cec63.js"><link rel="prefetch" href="/assets/js/13.c42e8571.js"><link rel="prefetch" href="/assets/js/14.881fad23.js"><link rel="prefetch" href="/assets/js/15.462dfca9.js"><link rel="prefetch" href="/assets/js/16.5d575c3d.js"><link rel="prefetch" href="/assets/js/17.f0b73ca7.js"><link rel="prefetch" href="/assets/js/19.d533bb05.js"><link rel="prefetch" href="/assets/js/20.96c5d397.js"><link rel="prefetch" href="/assets/js/21.cbcf6dd8.js"><link rel="prefetch" href="/assets/js/22.adfe6dc7.js"><link rel="prefetch" href="/assets/js/23.f98dcd4a.js"><link rel="prefetch" href="/assets/js/24.cc98dd08.js"><link rel="prefetch" href="/assets/js/25.6e4588cf.js"><link rel="prefetch" href="/assets/js/26.bafe62f3.js"><link rel="prefetch" href="/assets/js/27.2201a7c8.js"><link rel="prefetch" href="/assets/js/28.0a67566a.js"><link rel="prefetch" href="/assets/js/29.37c92bd7.js"><link rel="prefetch" href="/assets/js/3.c798138c.js"><link rel="prefetch" href="/assets/js/30.9d6cfb2b.js"><link rel="prefetch" href="/assets/js/31.f40a629f.js"><link rel="prefetch" href="/assets/js/32.be2986d3.js"><link rel="prefetch" href="/assets/js/33.c3de5799.js"><link rel="prefetch" href="/assets/js/34.4ffe0c7a.js"><link rel="prefetch" href="/assets/js/35.98f91b71.js"><link rel="prefetch" href="/assets/js/36.f18c6a65.js"><link rel="prefetch" href="/assets/js/37.aea495d7.js"><link rel="prefetch" href="/assets/js/38.9ff3218c.js"><link rel="prefetch" href="/assets/js/39.3310a859.js"><link rel="prefetch" href="/assets/js/4.90a7f436.js"><link rel="prefetch" href="/assets/js/40.ab3fe9cf.js"><link rel="prefetch" href="/assets/js/41.7d4e2296.js"><link rel="prefetch" href="/assets/js/42.89d1809a.js"><link rel="prefetch" href="/assets/js/43.8fb88cbb.js"><link rel="prefetch" href="/assets/js/44.8a0aa281.js"><link rel="prefetch" href="/assets/js/45.7f5495d0.js"><link rel="prefetch" href="/assets/js/46.4a4716aa.js"><link rel="prefetch" href="/assets/js/47.975bd07c.js"><link rel="prefetch" href="/assets/js/48.7a49e664.js"><link rel="prefetch" href="/assets/js/49.92b255a3.js"><link rel="prefetch" href="/assets/js/5.47abe20c.js"><link rel="prefetch" href="/assets/js/50.834840af.js"><link rel="prefetch" href="/assets/js/51.86666207.js"><link rel="prefetch" href="/assets/js/52.ba529a86.js"><link rel="prefetch" href="/assets/js/53.8713fde5.js"><link rel="prefetch" href="/assets/js/54.88907460.js"><link rel="prefetch" href="/assets/js/55.256ec879.js"><link rel="prefetch" href="/assets/js/56.4cb3c8b4.js"><link rel="prefetch" href="/assets/js/57.d0cf69f0.js"><link rel="prefetch" href="/assets/js/58.c02ee595.js"><link rel="prefetch" href="/assets/js/59.d741b69b.js"><link rel="prefetch" href="/assets/js/6.82cf8337.js"><link rel="prefetch" href="/assets/js/60.55ec1c86.js"><link rel="prefetch" href="/assets/js/7.7a3bdf3b.js"><link rel="prefetch" href="/assets/js/8.00dad7e7.js"><link rel="prefetch" href="/assets/js/9.8675e593.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.60aa9f3b.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">LuckyXYJ</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/?category=posts.html" class="nav-link">博客</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专题" class="dropdown-title"><!----> <span class="title" style="display:;">专题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topic/Swift/" class="nav-link">Swift</a></li><li class="dropdown-item"><!----> <a href="/topic/网络协议/" class="nav-link">网络协议</a></li><li class="dropdown-item"><!----> <a href="/topic/Objective-C/" class="nav-link router-link-active">Objective-C</a></li><li class="dropdown-item"><!----> <a href="/topic/iOS优化/" class="nav-link">OS优化</a></li><li class="dropdown-item"><!----> <a href="/topic/音视频/" class="nav-link">音视频</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/LuckyXYJ" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://xingyajie.tech/atom.xml" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Rss
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/?category=posts.html" class="nav-link">博客</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专题" class="dropdown-title"><!----> <span class="title" style="display:;">专题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topic/Swift/" class="nav-link">Swift</a></li><li class="dropdown-item"><!----> <a href="/topic/网络协议/" class="nav-link">网络协议</a></li><li class="dropdown-item"><!----> <a href="/topic/Objective-C/" class="nav-link router-link-active">Objective-C</a></li><li class="dropdown-item"><!----> <a href="/topic/iOS优化/" class="nav-link">OS优化</a></li><li class="dropdown-item"><!----> <a href="/topic/音视频/" class="nav-link">音视频</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/LuckyXYJ" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://xingyajie.tech/atom.xml" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Rss
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/topic/Objective-C/" aria-current="page" class="sidebar-link">Objective-C</a></li><li><a href="/topic/Objective-C/OC_%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="sidebar-link">OC_多线程</a></li><li><a href="/topic/Objective-C/OC_Category/" class="sidebar-link">OC_Category</a></li><li><a href="/topic/Objective-C/OC_RunLoop/" aria-current="page" class="active sidebar-link">OC_RunLoop</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#runloop" class="sidebar-link">RunLoop</a></li><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#runloop与线程" class="sidebar-link">RunLoop与线程</a></li><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#获取runloop" class="sidebar-link">获取RunLoop</a></li><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#runloop相关类" class="sidebar-link">RunLoop相关类</a></li><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#添加observer监听runloop的所有状态" class="sidebar-link">添加Observer监听RunLoop的所有状态</a></li><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#runloop的运行逻辑" class="sidebar-link">RunLoop的运行逻辑</a></li><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#runloop休眠的实现原理" class="sidebar-link">RunLoop休眠的实现原理</a></li><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#runloop在实际开中的应用" class="sidebar-link">RunLoop在实际开中的应用</a></li><li class="sidebar-sub-header level2"><a href="/topic/Objective-C/OC_RunLoop/#线程保活" class="sidebar-link">线程保活</a></li></ul></li><li><a href="/topic/Objective-C/OC_Block/" class="sidebar-link">OC_Block</a></li><li><a href="/topic/Objective-C/OC_Runtime/" class="sidebar-link">OC_Runtime</a></li><li><a href="/topic/Objective-C/OC_%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="sidebar-link">OC_内存管理</a></li><li><a href="/topic/Objective-C/OC_Class/" class="sidebar-link">OC_Class</a></li><li><a href="/topic/Objective-C/OC_Object/" class="sidebar-link">OC_Object</a></li><li><a href="/topic/Objective-C/OC_KVC/" class="sidebar-link">OC_KVC</a></li><li><a href="/topic/Objective-C/OC_KVO/" class="sidebar-link">OC_KVO</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=topic" title="分类" data-v-06225672>topic</a></li><li data-v-06225672><a href="/categories/?category=Objective-C" title="分类" data-v-06225672>Objective-C</a></li><li data-v-06225672><a href="/categories/?category=OC_RunLoop" title="分类" data-v-06225672>OC_RunLoop</a></li></ul> <div class="info" data-v-06225672><!----> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-03-08</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">OC_RunLoop<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="runloop"><a href="#runloop" class="header-anchor">#</a> RunLoop</h2> <p>运行循环。在程序运行过程中循环做一些事情</p> <p>作用：</p> <ul><li>保持程序的持续运行</li> <li>处理App中的各种事件（比如触摸事件、定时器事件等）</li> <li>节省CPU资源，提高程序性能：该做事时做事，该休息时休息</li> <li>......</li></ul> <p>应用范畴:</p> <ul><li>定时器（Timer）、PerformSelector</li> <li>GCD Async Main Queue</li> <li>事件响应、手势识别、界面刷新</li> <li>网络请求</li> <li>AutoreleasePool</li></ul> <h2 id="runloop与线程"><a href="#runloop与线程" class="header-anchor">#</a> RunLoop与线程</h2> <p>每条线程都有唯一的一个与之对应的RunLoop对象</p> <p>RunLoop保存在一个全局的Dictionary里，线程作为key，RunLoop作为value</p> <p>线程刚创建时并没有RunLoop对象，RunLoop会在第一次获取它时创建</p> <p>RunLoop会在线程结束时销毁</p> <p>主线程的RunLoop已经自动获取（创建），子线程默认没有开启RunLoop</p> <h2 id="获取runloop"><a href="#获取runloop" class="header-anchor">#</a> 获取RunLoop</h2> <div class="language-objective-c extra-class"><pre class="language-text"><code>// Foundation
+[NSRunLoop currentRunLoop]; // 获得当前线程的RunLoop对象
+[NSRunLoop mainRunLoop]; // 获得主线程的RunLoop对象
+
+// Core Foundation	
+CFRunLoopGetCurrent(); // 获得当前线程的RunLoop对象
+CFRunLoopGetMain(); // 获得主线程的RunLoop对象
+</code></pre></div><h2 id="runloop相关类"><a href="#runloop相关类" class="header-anchor">#</a> RunLoop相关类</h2> <p>Core Foundation中关于RunLoop的5个类</p> <ul><li>CFRunLoopRef</li> <li>CFRunLoopModeRef</li> <li>CFRunLoopSourceRef</li> <li>CFRunLoopTimerRef</li> <li>CFRunLoopObserverRef</li></ul> <p><img src="http://xingyajie.oss-cn-hangzhou.aliyuncs.com/uPic/image-20220607203745744.png" alt="image-20220607203745744"></p> <p><img src="http://xingyajie.oss-cn-hangzhou.aliyuncs.com/uPic/image-20220607203712802.png" alt="image-20220607203712802"></p> <p><img src="http://xingyajie.oss-cn-hangzhou.aliyuncs.com/uPic/image-20220607203727018.png" alt="image-20220607203727018"></p> <h3 id="cfrunloopmoderef"><a href="#cfrunloopmoderef" class="header-anchor">#</a> CFRunLoopModeRef</h3> <ul><li>CFRunLoopModeRef代表RunLoop的运行模式</li> <li>一个RunLoop包含若干个Mode，每个Mode又包含若干个Source0/Source1/Timer/Observer</li> <li>RunLoop启动时只能选择其中一个Mode，作为currentMode</li> <li>如果需要切换Mode，只能退出当前Loop，再重新选择一个Mode进入
+<ul><li>不同组的Source0/Source1/Timer/Observer能分隔开来，互不影响</li></ul></li> <li>如果Mode里没有任何Source0/Source1/Timer/Observer，RunLoop会立马退出</li></ul> <p>常见的2种Mode</p> <ul><li>kCFRunLoopDefaultMode（NSDefaultRunLoopMode）：App的默认Mode，通常主线程是在这个Mode下运</li> <li>UITrackingRunLoopMode：界面跟踪 Mode，用于 ScrollView 追踪触摸滑动，保证界面滑动时不受其他 Mode 影响</li></ul> <h3 id="cfrunloopobserverref"><a href="#cfrunloopobserverref" class="header-anchor">#</a> CFRunLoopObserverRef</h3> <p><img src="http://xingyajie.oss-cn-hangzhou.aliyuncs.com/uPic/image-20220607204418900.png" alt="image-20220607204418900"></p> <h3 id="cfrunloopsourceref"><a href="#cfrunloopsourceref" class="header-anchor">#</a> CFRunLoopSourceRef</h3> <p>Source0
+触摸事件处理
+performSelector:onThread:</p> <p>Source1
+基于Port的线程间通信
+系统事件捕捉</p> <h3 id="cfrunlooptimerref"><a href="#cfrunlooptimerref" class="header-anchor">#</a> CFRunLoopTimerRef</h3> <p>Timers
+NSTimer
+performSelector:withObject:afterDelay:</p> <h3 id="cfrunloopobserverref-2"><a href="#cfrunloopobserverref-2" class="header-anchor">#</a> CFRunLoopObserverRef</h3> <p>Observers
+用于监听RunLoop的状态
+UI刷新（BeforeWaiting）
+Autorelease pool（BeforeWaiting）</p> <h2 id="添加observer监听runloop的所有状态"><a href="#添加observer监听runloop的所有状态" class="header-anchor">#</a> 添加Observer监听RunLoop的所有状态</h2> <p><img src="http://xingyajie.oss-cn-hangzhou.aliyuncs.com/uPic/image-20220607204546406.png" alt="image-20220607204546406"></p> <h2 id="runloop的运行逻辑"><a href="#runloop的运行逻辑" class="header-anchor">#</a> RunLoop的运行逻辑</h2> <p><img src="http://xingyajie.oss-cn-hangzhou.aliyuncs.com/uPic/image-20220607204610636.png" alt="image-20220607204610636"></p> <p>具体流程：</p> <ul><li>01、通知Observers：进入Loop</li> <li>02、通知Observers：即将处理Timers</li> <li>03、通知Observers：即将处理Sources</li> <li>04、处理Blocks</li> <li>05、处理Source0（可能会再次处理Blocks）</li> <li>06、如果存在Source1，就跳转到第8步</li> <li>07、通知Observers：开始休眠（等待消息唤醒）</li> <li>08、通知Observers：结束休眠（被某个消息唤醒）
+<ul><li>01&gt; 处理Timer</li> <li>02&gt; 处理GCD Async To Main Queue</li> <li>03&gt; 处理Source1</li></ul></li> <li>09、处理Blocks</li> <li>10、根据前面的执行结果，决定如何操作
+<ul><li>01&gt; 回到第02步</li> <li>02&gt; 退出Loop</li></ul></li> <li>11、通知Observers：退出Loop</li></ul> <p><img src="http://xingyajie.oss-cn-hangzhou.aliyuncs.com/uPic/image-20220607205420166.png" alt="image-20220607205420166"></p> <h2 id="runloop休眠的实现原理"><a href="#runloop休眠的实现原理" class="header-anchor">#</a> RunLoop休眠的实现原理</h2> <p><img src="http://xingyajie.oss-cn-hangzhou.aliyuncs.com/uPic/image-20220607205450788.png" alt="image-20220607205450788"></p> <h2 id="runloop在实际开中的应用"><a href="#runloop在实际开中的应用" class="header-anchor">#</a> RunLoop在实际开中的应用</h2> <ul><li>控制线程生命周期（线程保活）</li> <li>解决NSTimer在滑动时停止工作的问题</li> <li>监控应用卡顿</li> <li>性能优化</li></ul> <h2 id="线程保活"><a href="#线程保活" class="header-anchor">#</a> 线程保活</h2> <div class="language-objective-c extra-class"><pre class="language-text"><code>/** XYJThread **/
+@interface XYJThread : NSThread
+@end
+@implementation XYJThread
+- (void)dealloc
+{
+    NSLog(@&quot;%s&quot;, __func__);
+}
+@end
+
+/** XYJPermenantThread **/
+@interface XYJPermenantThread()
+@property (strong, nonatomic) XYJThread *innerThread;
+@end
+
+@implementation XYJPermenantThread
+
+#pragma mark - public methods
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.innerThread = [[XYJThread alloc] initWithBlock:^{
+            // 创建上下文（要初始化一下结构体）
+            CFRunLoopSourceContext context = {0};  
+            // 创建source
+            CFRunLoopSourceRef source = CFRunLoopSourceCreate(kCFAllocatorDefault, 0, &amp;context);
+            // 往Runloop中添加source
+            CFRunLoopAddSource(CFRunLoopGetCurrent(), source, kCFRunLoopDefaultMode);
+            // 销毁source
+            CFRelease(source);
+            // 启动
+          	// 第3个参数：returnAfterSourceHandled，设置为true，代表执行完source后就会退出当前
+            CFRunLoopRunInMode(kCFRunLoopDefaultMode, 1.0e10, false);
+        }];
+        
+        [self.innerThread start];
+    }
+    return self;
+}
+
+- (void)executeTask:(XYJPermenantThreadTask)task {
+    if (!self.innerThread || !task) return;
+    [self performSelector:@selector(__executeTask:) onThread:self.innerThread withObject:task waitUntilDone:NO];
+}
+
+- (void)stop {
+    if (!self.innerThread) return;
+    [self performSelector:@selector(__stop) onThread:self.innerThread withObject:nil waitUntilDone:YES];
+}
+
+- (void)dealloc {
+    [self stop];
+}
+
+#pragma mark - private methods
+- (void)__stop {
+    CFRunLoopStop(CFRunLoopGetCurrent());
+    self.innerThread = nil;
+}
+
+- (void)__executeTask:(XYJPermenantThreadTask)task {
+    task();
+}
+
+@end
+
+</code></pre></div></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/topic/Objective-C/OC_Category/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">OC_Category</div></a> <a href="/topic/Objective-C/OC_Block/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">OC_Block</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/topic/Objective-C/OC_Category/" class="prev">OC_Category</a></span> <span class="next"><a href="/topic/Objective-C/OC_Block/">OC_Block</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/topic/%E9%9F%B3%E8%A7%86%E9%A2%91/"><div>
+            音视频
+            <!----></div></a> <span class="date">03-08</span></dt></dl><dl><dd>02</dd> <dt><a href="/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><div>
+            docker常用命令
+            <!----></div></a> <span class="date">03-08</span></dt></dl><dl><dd>03</dd> <dt><a href="/topic/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"><div>
+            网络协议
+            <!----></div></a> <span class="date">03-08</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><!----> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2015-2023
+    <span>LuckyXYJ | <a href="http://beian.miit.gov.cn/">豫ICP备2021029639号</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.405a0211.js" defer></script><script src="/assets/js/2.7f06bbfc.js" defer></script><script src="/assets/js/18.8b865739.js" defer></script>
+  </body>
+</html>

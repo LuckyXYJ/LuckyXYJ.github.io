@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Swift流程控制 | LuckyXYJ</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="shortcut icon" type="image/x-icon" href="/logo.svg">
+    <meta name="description" content="--------">
+    
+    <link rel="preload" href="/assets/css/0.styles.60aa9f3b.css" as="style"><link rel="preload" href="/assets/js/app.405a0211.js" as="script"><link rel="preload" href="/assets/js/2.7f06bbfc.js" as="script"><link rel="preload" href="/assets/js/35.98f91b71.js" as="script"><link rel="prefetch" href="/assets/js/10.70343278.js"><link rel="prefetch" href="/assets/js/11.9caabbe4.js"><link rel="prefetch" href="/assets/js/12.0a4cec63.js"><link rel="prefetch" href="/assets/js/13.c42e8571.js"><link rel="prefetch" href="/assets/js/14.881fad23.js"><link rel="prefetch" href="/assets/js/15.462dfca9.js"><link rel="prefetch" href="/assets/js/16.5d575c3d.js"><link rel="prefetch" href="/assets/js/17.f0b73ca7.js"><link rel="prefetch" href="/assets/js/18.8b865739.js"><link rel="prefetch" href="/assets/js/19.d533bb05.js"><link rel="prefetch" href="/assets/js/20.96c5d397.js"><link rel="prefetch" href="/assets/js/21.cbcf6dd8.js"><link rel="prefetch" href="/assets/js/22.adfe6dc7.js"><link rel="prefetch" href="/assets/js/23.f98dcd4a.js"><link rel="prefetch" href="/assets/js/24.cc98dd08.js"><link rel="prefetch" href="/assets/js/25.6e4588cf.js"><link rel="prefetch" href="/assets/js/26.bafe62f3.js"><link rel="prefetch" href="/assets/js/27.2201a7c8.js"><link rel="prefetch" href="/assets/js/28.0a67566a.js"><link rel="prefetch" href="/assets/js/29.37c92bd7.js"><link rel="prefetch" href="/assets/js/3.c798138c.js"><link rel="prefetch" href="/assets/js/30.9d6cfb2b.js"><link rel="prefetch" href="/assets/js/31.f40a629f.js"><link rel="prefetch" href="/assets/js/32.be2986d3.js"><link rel="prefetch" href="/assets/js/33.c3de5799.js"><link rel="prefetch" href="/assets/js/34.4ffe0c7a.js"><link rel="prefetch" href="/assets/js/36.f18c6a65.js"><link rel="prefetch" href="/assets/js/37.aea495d7.js"><link rel="prefetch" href="/assets/js/38.9ff3218c.js"><link rel="prefetch" href="/assets/js/39.3310a859.js"><link rel="prefetch" href="/assets/js/4.90a7f436.js"><link rel="prefetch" href="/assets/js/40.ab3fe9cf.js"><link rel="prefetch" href="/assets/js/41.7d4e2296.js"><link rel="prefetch" href="/assets/js/42.89d1809a.js"><link rel="prefetch" href="/assets/js/43.8fb88cbb.js"><link rel="prefetch" href="/assets/js/44.8a0aa281.js"><link rel="prefetch" href="/assets/js/45.7f5495d0.js"><link rel="prefetch" href="/assets/js/46.4a4716aa.js"><link rel="prefetch" href="/assets/js/47.975bd07c.js"><link rel="prefetch" href="/assets/js/48.7a49e664.js"><link rel="prefetch" href="/assets/js/49.92b255a3.js"><link rel="prefetch" href="/assets/js/5.47abe20c.js"><link rel="prefetch" href="/assets/js/50.834840af.js"><link rel="prefetch" href="/assets/js/51.86666207.js"><link rel="prefetch" href="/assets/js/52.ba529a86.js"><link rel="prefetch" href="/assets/js/53.8713fde5.js"><link rel="prefetch" href="/assets/js/54.88907460.js"><link rel="prefetch" href="/assets/js/55.256ec879.js"><link rel="prefetch" href="/assets/js/56.4cb3c8b4.js"><link rel="prefetch" href="/assets/js/57.d0cf69f0.js"><link rel="prefetch" href="/assets/js/58.c02ee595.js"><link rel="prefetch" href="/assets/js/59.d741b69b.js"><link rel="prefetch" href="/assets/js/6.82cf8337.js"><link rel="prefetch" href="/assets/js/60.55ec1c86.js"><link rel="prefetch" href="/assets/js/7.7a3bdf3b.js"><link rel="prefetch" href="/assets/js/8.00dad7e7.js"><link rel="prefetch" href="/assets/js/9.8675e593.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.60aa9f3b.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">LuckyXYJ</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/?category=posts.html" class="nav-link">博客</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专题" class="dropdown-title"><!----> <span class="title" style="display:;">专题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topic/Swift/" class="nav-link router-link-active">Swift</a></li><li class="dropdown-item"><!----> <a href="/topic/网络协议/" class="nav-link">网络协议</a></li><li class="dropdown-item"><!----> <a href="/topic/Objective-C/" class="nav-link">Objective-C</a></li><li class="dropdown-item"><!----> <a href="/topic/iOS优化/" class="nav-link">OS优化</a></li><li class="dropdown-item"><!----> <a href="/topic/音视频/" class="nav-link">音视频</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/LuckyXYJ" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://xingyajie.tech/atom.xml" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Rss
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/?category=posts.html" class="nav-link">博客</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专题" class="dropdown-title"><!----> <span class="title" style="display:;">专题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topic/Swift/" class="nav-link router-link-active">Swift</a></li><li class="dropdown-item"><!----> <a href="/topic/网络协议/" class="nav-link">网络协议</a></li><li class="dropdown-item"><!----> <a href="/topic/Objective-C/" class="nav-link">Objective-C</a></li><li class="dropdown-item"><!----> <a href="/topic/iOS优化/" class="nav-link">OS优化</a></li><li class="dropdown-item"><!----> <a href="/topic/音视频/" class="nav-link">音视频</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/LuckyXYJ" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://xingyajie.tech/atom.xml" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Rss
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/topic/Swift/" aria-current="page" class="sidebar-link">Swift</a></li><li><a href="/topic/Swift/Swift%E6%B3%9B%E5%9E%8B/" class="sidebar-link">Swift泛型</a></li><li><a href="/topic/Swift/Swift%E7%BB%A7%E6%89%BF/" class="sidebar-link">Swift继承</a></li><li><a href="/topic/Swift/Swift%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9/" class="sidebar-link">Swift语言特点</a></li><li><a href="/topic/Swift/Swift%E6%89%A9%E5%B1%95/" class="sidebar-link">Swift扩展</a></li><li><a href="/topic/Swift/Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" aria-current="page" class="active sidebar-link">Swift流程控制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/#if-else" class="sidebar-link">if - else</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/#while" class="sidebar-link">while</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/#for-in-和区间运算符" class="sidebar-link">for - in 和区间运算符</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/#switch" class="sidebar-link">switch</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/#标签语句" class="sidebar-link">标签语句</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/#guard语句" class="sidebar-link">guard语句</a></li></ul></li><li><a href="/topic/Swift/Swift%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="sidebar-link">Swift错误处理</a></li><li><a href="/topic/Swift/Swift%E5%8D%8F%E8%AE%AE/" class="sidebar-link">Swift协议</a></li><li><a href="/topic/Swift/Swift%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8/" class="sidebar-link">Swift初始化器</a></li><li><a href="/topic/Swift/Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE/" class="sidebar-link">Swift结构体，类，枚举</a></li><li><a href="/topic/Swift/Swift%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="sidebar-link">Swift内存管理</a></li><li><a href="/topic/Swift/Swift%E4%B8%8EOC/" class="sidebar-link">Swift与OC</a></li><li><a href="/topic/Swift/Swift%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%8C%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F%E3%80%81%E5%85%83%E7%BB%84/" class="sidebar-link">Swift数据类型，常量、变量、元组</a></li><li><a href="/topic/Swift/Swift%E9%AB%98%E7%BA%A7%E8%BF%90%E7%AE%97%E7%AC%A6/" class="sidebar-link">Swift高级运算符</a></li><li><a href="/topic/Swift/Swift%E6%96%B9%E6%B3%95%E3%80%81%E9%97%AD%E5%8C%85/" class="sidebar-link">Swift方法、闭包</a></li><li><a href="/topic/Swift/Swift%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="sidebar-link">Swift模式匹配</a></li><li><a href="/topic/Swift/Swift%E5%B1%9E%E6%80%A7%EF%BC%8C%E5%8D%95%E4%BE%8B/" class="sidebar-link">Swift属性，单例</a></li><li><a href="/topic/Swift/Swift%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" class="sidebar-link">Swift访问控制</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=topic" title="分类" data-v-06225672>topic</a></li><li data-v-06225672><a href="/categories/?category=Swift" title="分类" data-v-06225672>Swift</a></li><li data-v-06225672><a href="/categories/?category=Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6" title="分类" data-v-06225672>Swift流程控制</a></li></ul> <div class="info" data-v-06225672><!----> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-03-08</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABKFJREFUSA3tVl1oFVcQnrMbrak3QUgkya1akpJYcrUtIqW1JvFBE9LiQ5v6JmJpolbMg32rVrhgoYK0QiMY6i9Y6EMaW5D+xFJaTYItIuK2Kr3+BJNwkxBj05sQY3b3nM6cs2dv9t7NT/vQJw/sndk5M/PNzJkzewGerP+pAmy+ON8lLzUJgA8ZYxYIYZmGYRnctDaWvJJAmTtfP1pvXsBCCPP8QFcCaRkZYACgDZFO4stNIcBCajEOlmmC9XpJ9bAGCaPaPmzPl32dvLSVu3BWCTQs0XQQ6g0DYgwLIoAZbBCdW/i+781o1VVlm/410mw4h06Y7bIPHNyWDyL4FHkX03Q8SrzNhZTZriieckWt7cL6MM85YcLpsi/7O9/iXFT6MswI0DmmpkSaJ0qLxFIm3+i1THHB3zmBH3PYx9CcykcLOeQVVa7QtdxTgQgEleX2AjHYfwA+2ddV77ruGoJUbhGDI09YSNXyMpUt5ylOzxgbUmtOp7NmbNt8v3arjTBfYELmLUV+M+nSawNNAUqpT3ClJWg5I3BLT+cGW/DXNGCa6tx1aakCGEigArTn4TDIPdrXXYKCZNrHLMCOEPvHBlLQ99s9eHB7EB6NTki73CVPQ2F5MSx/uRQixfmq7rK0wYD8w8E905bnPDfwoWs/rfv93NWN/ZfvwsLIU7A09gxECyISeGJkHAau98L97tuw7NXnoPyNF8FcYGLGKsOs0mN3OEyec9esGW/ZEl945dTP34wlR2FZVQWU1q0Cw8Tr7p+hgLLNL0FPxx/Q35mA8aEUrH6nCgwEl0tn7wUiZYJnNRh6DK4UH/k0lfyrsBKdPVv/AriGIQcEDQZ65LBAGe2Rzui9Ybjz7XUppz1/uKBbyVPGkN3ZAeC6hr0x7Nr38N5+EqkoOm17xpoqR9ohQF55ERSvr4Dkr3chNfC3DMzGJlNBElW8w9nsGQvhNGIzDkXzCg8cLK951xHsFBlTJspJNi3ZFIMF2AeDV3q8DNOB+YHi6QTrChDIWDBRi5U5f+ZMfJLu3ccrqxtdxk4SKH336LFxSmkqefwU5T8fhdSdQf9IVKD6aNiwI/hnmcAZ91isYMJIaCUCx9W098+LgruikeTqzqqxKPUwqJyCPJiyemVVZBOijDGjD38Os0jOiSPL1z3SPjXNANbiNPXAdzTfukjjuknNBbyz3nwgTd3AVFqUJ5hpHlq9MveLnWwttUfoygBmvVjuikxND3znrhsELnZk7k+OjIGxeNEkomyLVta0xxn+HZhjBc4YZ/AFjHjz9u3xRZl2BN4aq9nFwWh16IrQ1aHHEd3j1+4/dB9OtH4e29A2H1DyHQRmOSfQZ1Fy7MHBTGB6J/Djq6p3OxyO2cB+4Car7v/o3GXgfAkj23+x9ID1Teoamo/SXcbvSf2PX7Vc8DdCmE1vN9di+32P9/5YR3vLnhCVGUWBjEkr3yh4H8v9CzmsbdhzOKzsJKM90iFdaTMjRPhGVsakRvOaRidljo6H6G7j+ctrJpsP+4COhDIl0La2+FS4+5mlocBaXY5QnGZysIBYoeSsl5qQzrSj/cgNrfuEzlWBfwA+EjrZyWUvpAAAAABJRU5ErkJggg==">Swift流程控制<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="if-else"><a href="#if-else" class="header-anchor">#</a> if - else</h2> <p>与其他编程语言一样，Swift也可以使用<strong>if</strong>，<strong>if - else</strong> ，**if- else if - else **</p> <p>需要注意的是Swift中条件语句可以省略'()'，但是不能省略 执行语句的'{}'。且if后面只能跟bool值，oc中if后可以跟对象(非空即真)</p> <div class="language- extra-class"><pre class="language-text"><code>if age &gt;= 18 {
+	print(&quot;成年人&quot;)
+}else {
+	pring(&quot;未成年人&quot;)
+}
+</code></pre></div><h2 id="while"><a href="#while" class="header-anchor">#</a> while</h2> <p>while 又跟其他语言不一样了， 没有<strong>do - while</strong>，可以使用<strong>repeat - while</strong></p> <p>while 也是条件语句可以省略'()'，但是不能省略 执行语句的'{}'，Swift取消了自加、自减符号</p> <div class="language- extra-class"><pre class="language-text"><code>var num = 5;
+while num &gt; 0 {
+    num -= 1
+    print(num)
+}
+
+repeat {
+    num += 1
+    print(num)
+}while num &lt; 5
+
+</code></pre></div><h2 id="for-in-和区间运算符"><a href="#for-in-和区间运算符" class="header-anchor">#</a> for - in 和区间运算符</h2> <p>Swift取消了自加自减符号&quot;++&quot;、&quot;--&quot;。for (var i = 0, i &lt; 5, i ++)这种语法也不能用了</p> <p>for - in 可以结合 区间运算符使用 <strong>a...b</strong>，<strong>a..&lt;b</strong>。这里需要注意的是Swift只支持左边小右边打这种情况，且半开区间只有 <strong>a &lt;= 取值 &lt; b</strong>这一种情况</p> <p>Swift还支持单侧空间**...a**，<strong>a...</strong>，<strong>..&lt;a</strong>。单侧空间不能直接用在<strong>for - in</strong>中，但是可以与数组结合使用.</p> <p>字符字符串也能使用区间运算符，但是这种不能用在<strong>for - in</strong>中</p> <p>for - in 也可以使用带间隔的区间值 <strong>stride(from: , through: , by: )</strong>、<strong>stride(from: , to: , by: )</strong>，具体区别看下面代码</p> <p>区间类型分为ClosedRange，Range，PartialRangeThrough三种</p> <p><strong>逆序</strong>：<code>​ ...</code>或者<code>​ ..&lt;</code>都是从小到大，如果是需要逆序的情况下，可以使用<code>stride(from: 3, through: 0, by: -1)</code>实现，也可以使用<code>​ (0...10).reversed()</code>来实现</p> <p><strong>index</strong>：遍历数组时可以通过<code>​ for i in 0..&lt;arr.count</code>方式获取index。或者<code>​ for (index, item) in arr.enumerated()</code></p> <div class="language- extra-class"><pre class="language-text"><code>let names = [&quot;小王&quot;, &quot;老王&quot;, &quot;小任&quot;, &quot;大任&quot;];
+let range1: ClosedRange&lt;Int&gt; = 1...2	//闭区间
+let range2: Range&lt;Int&gt; = 1..&lt;2	//半开区间
+let range3: PartialRangeThrough&lt;Int&gt; = ...2	//单侧区间
+    
+for name in names[range1] {
+    print(name)
+}
+    
+for name in names[range2] {
+    print(name)
+}
+    
+for name in names[range3] {
+    print(name)
+}
+
+//带字符串的区间运算符
+let strRange:ClosedRange = &quot;aa&quot;...&quot;dd&quot;
+print(strRange)//aa...dd
+print(strRange.contains(&quot;Ac&quot;)) //false
+print(strRange.contains(&quot;cc&quot;)) //true
+print(strRange.contains(&quot;cac&quot;)) //true
+print(strRange.contains(&quot;cfffffff&quot;)) //true
+print(strRange.contains(&quot;ddd&quot;)) //false
+
+//带间隔区间值
+//表示 从 0 开始，间隔为2 ，最大为10，即&lt;=10
+for i in stride(from: 0, through: 10, by: 2) {
+    print(&quot;i = \(i)&quot;)
+}
+//表示 从 0 开始，间隔为2 ，小10，及 &lt; 10
+for i in stride(from: 0, to: 10, by: 2) {
+    print(&quot;i = \(i)&quot;)
+}
+</code></pre></div><h2 id="switch"><a href="#switch" class="header-anchor">#</a> switch</h2> <p>switch又是与众不同的，支持Character、String、元组 类型的switch。各种情况在下面代码中均有提现，且都有备注</p> <ul><li>1、case和default后面不能跟“{}”，直接跟执行语句就行</li> <li>2、case默认不会贯穿，后面不需要写<strong>break</strong>，可以使用<strong>fallthrouh</strong>实现贯穿效果</li> <li>3、但是每个条件下至少有一个执行语句，如果没有任何操作，可写<strong>break</strong></li> <li>4、switch确保处理完所有情况，可以省略default</li> <li>5、支持复合条件,case后可以跟多个条件，用&quot;,&quot;隔开</li> <li>6、元组的switch，可以分别匹配元组各个值。</li> <li>7、元组的switch，可以实现值绑定，获取到符合条件的元组内的值，具体看下面代码举例</li> <li>8、元组可以与where结合使用，具体看下面代码举例</li></ul> <div class="language-swift extra-class"><pre class="language-swift"><code>	<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">3</span>
+    
+    <span class="token keyword">switch</span> a <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token number">2</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span><span class="token comment">//必须有一个执行语句</span>
+    <span class="token keyword">case</span> <span class="token number">3</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;等于3&quot;</span></span><span class="token punctuation">)</span><span class="token comment">//不会贯穿</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span><span class="token comment">//必须有一个执行语句</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">enum</span> <span class="token class-name">Season</span> <span class="token punctuation">{</span><span class="token keyword">case</span> spring<span class="token punctuation">;</span> <span class="token keyword">case</span> summer<span class="token punctuation">;</span> <span class="token keyword">case</span> autumn<span class="token punctuation">;</span> <span class="token keyword">case</span> winter<span class="token punctuation">}</span>
+    <span class="token keyword">let</span> season <span class="token operator">=</span> <span class="token class-name">Season</span><span class="token punctuation">.</span>summer
+    <span class="token comment">//确保处理完所有情况，可以省略default</span>
+    <span class="token keyword">switch</span> season <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token class-name">Season</span><span class="token punctuation">.</span>spring<span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;春&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">.</span>summer<span class="token punctuation">:</span>   <span class="token comment">//可以省略类型Season.summer --&gt; .summer</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;夏&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token class-name">Season</span><span class="token punctuation">.</span>autumn<span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;秋&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">.</span>winter<span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;冬&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">//swift中switch支持啊Character、String类型</span>
+    
+    <span class="token keyword">let</span> str<span class="token punctuation">:</span><span class="token class-name">String</span> <span class="token operator">=</span> <span class="token string-literal"><span class="token string">&quot;abc&quot;</span></span>
+    <span class="token keyword">switch</span> str <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">&quot;abc&quot;</span></span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">//复合条件,case后可以跟多个条件，用&quot;,&quot;隔开</span>
+    <span class="token keyword">switch</span> str <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token string-literal"><span class="token string">&quot;abc&quot;</span></span><span class="token punctuation">,</span><span class="token string-literal"><span class="token string">&quot;def&quot;</span></span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;abc 或者 def&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">//区间匹配</span>
+    <span class="token keyword">switch</span> a <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token number">0</span><span class="token operator">...</span><span class="token number">3</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;0&lt;= a &lt;= 3&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+    
+    
+    <span class="token keyword">let</span> point <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    
+    <span class="token comment">//元祖匹配</span>
+    <span class="token keyword">switch</span> point <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;原点&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span><span class="token omit keyword">_</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;x轴&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token omit keyword">_</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;y轴&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token operator">...</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token operator">...</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;第一象限&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token operator">...</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token operator">...</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment">//这句仍然符合条件，但是并不会不打印，可以看出swift中switch不会贯穿，且switch从上到下命中case后就直接跳出</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;正方形格子&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">//值绑定</span>
+    <span class="token keyword">switch</span> point <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span><span class="token keyword">let</span> x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;x = </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">x</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">let</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;y = </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">y</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;(x, y) = (</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">x</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">y</span><span class="token interpolation-punctuation punctuation">)</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">)</span> <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 元组值绑定与where结合使用</span>
+    <span class="token keyword">switch</span> point <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token keyword">where</span> x <span class="token operator">==</span> y<span class="token punctuation">:</span>   <span class="token comment">//条件1：当x==y时进入该case</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;x = y&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token keyword">where</span> x <span class="token operator">==</span> <span class="token operator">-</span>y<span class="token punctuation">:</span> <span class="token comment">//条件2：当x==-y时进入该case</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;x = -y&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token comment">//条件3：非前面两种情况，进入该条件语句，相当于default，</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;(</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">x</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">y</span><span class="token interpolation-punctuation punctuation">)</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>    <span class="token comment">//前面三个条件包含所有的情况，这个不需要写了。default后面不能进行值绑定</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>point<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h2 id="标签语句"><a href="#标签语句" class="header-anchor">#</a> 标签语句</h2> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token label important">outer</span><span class="token punctuation">:</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token number">1</span><span class="token operator">...</span><span class="token number">4</span> <span class="token punctuation">{</span>
+	<span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token number">1</span><span class="token operator">...</span><span class="token number">4</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> k <span class="token operator">==</span> <span class="token number">3</span> <span class="token punctuation">{</span>
+      <span class="token keyword">continue</span><span class="token label important"> outer</span> 
+    <span class="token punctuation">}</span> <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">3</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">break</span><span class="token label important"> outer</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;i == </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">i</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, k == </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">k</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="guard语句"><a href="#guard语句" class="header-anchor">#</a> guard语句</h2> <p>当guard语句的条件为false时，就会执行大括号里面的代码</p> <p>当guard语句的条件为true时，就会跳过guard语句</p> <p>guard语句特别适合用来“提前退出”</p> <div class="language- extra-class"><pre class="language-text"><code>guard 条件 else { 
+	// do something....
+	退出当前作用域 
+	// return、break、continue、throw error 
+}
+</code></pre></div><p>当使用guard语句进行可选项绑定时，绑定的常量(let)、变量(var)也能在外层作用域中使用</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">func</span> <span class="token function-definition function">login</span><span class="token punctuation">(</span><span class="token omit keyword">_</span> info<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">String</span> <span class="token punctuation">:</span> <span class="token class-name">String</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token keyword">guard</span> <span class="token keyword">let</span> username <span class="token operator">=</span> info<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">&quot;username&quot;</span></span><span class="token punctuation">]</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+  	<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;请输入用户名&quot;</span></span><span class="token punctuation">)</span> 
+  	<span class="token keyword">return</span> 
+  <span class="token punctuation">}</span> 
+  <span class="token keyword">guard</span> <span class="token keyword">let</span> password <span class="token operator">=</span> info<span class="token punctuation">[</span><span class="token string-literal"><span class="token string">&quot;password&quot;</span></span><span class="token punctuation">]</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  	<span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;请输入密码&quot;</span></span><span class="token punctuation">)</span>
+  	<span class="token keyword">return</span> 
+  <span class="token punctuation">}</span> 
+  <span class="token comment">// if username ....</span>
+  <span class="token comment">// if password ....</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;用户名：</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">username</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">&quot;密码：</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">password</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">&quot;登陆ing&quot;</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/topic/%E9%9F%B3%E8%A7%86%E9%A2%91/"><div>
+            音视频
+            <!----></div></a> <span class="date">03-08</span></dt></dl><dl><dd>02</dd> <dt><a href="/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><div>
+            docker常用命令
+            <!----></div></a> <span class="date">03-08</span></dt></dl><dl><dd>03</dd> <dt><a href="/topic/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"><div>
+            网络协议
+            <!----></div></a> <span class="date">03-08</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><!----> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2015-2023
+    <span>LuckyXYJ | <a href="http://beian.miit.gov.cn/">豫ICP备2021029639号</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.405a0211.js" defer></script><script src="/assets/js/2.7f06bbfc.js" defer></script><script src="/assets/js/35.98f91b71.js" defer></script>
+  </body>
+</html>

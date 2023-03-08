@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Swift结构体，类，枚举 | LuckyXYJ</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="shortcut icon" type="image/x-icon" href="/logo.svg">
+    <meta name="description" content="--------">
+    
+    <link rel="preload" href="/assets/css/0.styles.60aa9f3b.css" as="style"><link rel="preload" href="/assets/js/app.405a0211.js" as="script"><link rel="preload" href="/assets/js/2.7f06bbfc.js" as="script"><link rel="preload" href="/assets/js/36.f18c6a65.js" as="script"><link rel="prefetch" href="/assets/js/10.70343278.js"><link rel="prefetch" href="/assets/js/11.9caabbe4.js"><link rel="prefetch" href="/assets/js/12.0a4cec63.js"><link rel="prefetch" href="/assets/js/13.c42e8571.js"><link rel="prefetch" href="/assets/js/14.881fad23.js"><link rel="prefetch" href="/assets/js/15.462dfca9.js"><link rel="prefetch" href="/assets/js/16.5d575c3d.js"><link rel="prefetch" href="/assets/js/17.f0b73ca7.js"><link rel="prefetch" href="/assets/js/18.8b865739.js"><link rel="prefetch" href="/assets/js/19.d533bb05.js"><link rel="prefetch" href="/assets/js/20.96c5d397.js"><link rel="prefetch" href="/assets/js/21.cbcf6dd8.js"><link rel="prefetch" href="/assets/js/22.adfe6dc7.js"><link rel="prefetch" href="/assets/js/23.f98dcd4a.js"><link rel="prefetch" href="/assets/js/24.cc98dd08.js"><link rel="prefetch" href="/assets/js/25.6e4588cf.js"><link rel="prefetch" href="/assets/js/26.bafe62f3.js"><link rel="prefetch" href="/assets/js/27.2201a7c8.js"><link rel="prefetch" href="/assets/js/28.0a67566a.js"><link rel="prefetch" href="/assets/js/29.37c92bd7.js"><link rel="prefetch" href="/assets/js/3.c798138c.js"><link rel="prefetch" href="/assets/js/30.9d6cfb2b.js"><link rel="prefetch" href="/assets/js/31.f40a629f.js"><link rel="prefetch" href="/assets/js/32.be2986d3.js"><link rel="prefetch" href="/assets/js/33.c3de5799.js"><link rel="prefetch" href="/assets/js/34.4ffe0c7a.js"><link rel="prefetch" href="/assets/js/35.98f91b71.js"><link rel="prefetch" href="/assets/js/37.aea495d7.js"><link rel="prefetch" href="/assets/js/38.9ff3218c.js"><link rel="prefetch" href="/assets/js/39.3310a859.js"><link rel="prefetch" href="/assets/js/4.90a7f436.js"><link rel="prefetch" href="/assets/js/40.ab3fe9cf.js"><link rel="prefetch" href="/assets/js/41.7d4e2296.js"><link rel="prefetch" href="/assets/js/42.89d1809a.js"><link rel="prefetch" href="/assets/js/43.8fb88cbb.js"><link rel="prefetch" href="/assets/js/44.8a0aa281.js"><link rel="prefetch" href="/assets/js/45.7f5495d0.js"><link rel="prefetch" href="/assets/js/46.4a4716aa.js"><link rel="prefetch" href="/assets/js/47.975bd07c.js"><link rel="prefetch" href="/assets/js/48.7a49e664.js"><link rel="prefetch" href="/assets/js/49.92b255a3.js"><link rel="prefetch" href="/assets/js/5.47abe20c.js"><link rel="prefetch" href="/assets/js/50.834840af.js"><link rel="prefetch" href="/assets/js/51.86666207.js"><link rel="prefetch" href="/assets/js/52.ba529a86.js"><link rel="prefetch" href="/assets/js/53.8713fde5.js"><link rel="prefetch" href="/assets/js/54.88907460.js"><link rel="prefetch" href="/assets/js/55.256ec879.js"><link rel="prefetch" href="/assets/js/56.4cb3c8b4.js"><link rel="prefetch" href="/assets/js/57.d0cf69f0.js"><link rel="prefetch" href="/assets/js/58.c02ee595.js"><link rel="prefetch" href="/assets/js/59.d741b69b.js"><link rel="prefetch" href="/assets/js/6.82cf8337.js"><link rel="prefetch" href="/assets/js/60.55ec1c86.js"><link rel="prefetch" href="/assets/js/7.7a3bdf3b.js"><link rel="prefetch" href="/assets/js/8.00dad7e7.js"><link rel="prefetch" href="/assets/js/9.8675e593.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.60aa9f3b.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">LuckyXYJ</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/?category=posts.html" class="nav-link">博客</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专题" class="dropdown-title"><!----> <span class="title" style="display:;">专题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topic/Swift/" class="nav-link router-link-active">Swift</a></li><li class="dropdown-item"><!----> <a href="/topic/网络协议/" class="nav-link">网络协议</a></li><li class="dropdown-item"><!----> <a href="/topic/Objective-C/" class="nav-link">Objective-C</a></li><li class="dropdown-item"><!----> <a href="/topic/iOS优化/" class="nav-link">OS优化</a></li><li class="dropdown-item"><!----> <a href="/topic/音视频/" class="nav-link">音视频</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/LuckyXYJ" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://xingyajie.tech/atom.xml" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Rss
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/categories/?category=posts.html" class="nav-link">博客</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专题" class="dropdown-title"><!----> <span class="title" style="display:;">专题</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/topic/Swift/" class="nav-link router-link-active">Swift</a></li><li class="dropdown-item"><!----> <a href="/topic/网络协议/" class="nav-link">网络协议</a></li><li class="dropdown-item"><!----> <a href="/topic/Objective-C/" class="nav-link">Objective-C</a></li><li class="dropdown-item"><!----> <a href="/topic/iOS优化/" class="nav-link">OS优化</a></li><li class="dropdown-item"><!----> <a href="/topic/音视频/" class="nav-link">音视频</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/LuckyXYJ" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://xingyajie.tech/atom.xml" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Rss
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/topic/Swift/" aria-current="page" class="sidebar-link">Swift</a></li><li><a href="/topic/Swift/Swift%E6%B3%9B%E5%9E%8B/" class="sidebar-link">Swift泛型</a></li><li><a href="/topic/Swift/Swift%E7%BB%A7%E6%89%BF/" class="sidebar-link">Swift继承</a></li><li><a href="/topic/Swift/Swift%E8%AF%AD%E8%A8%80%E7%89%B9%E7%82%B9/" class="sidebar-link">Swift语言特点</a></li><li><a href="/topic/Swift/Swift%E6%89%A9%E5%B1%95/" class="sidebar-link">Swift扩展</a></li><li><a href="/topic/Swift/Swift%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" class="sidebar-link">Swift流程控制</a></li><li><a href="/topic/Swift/Swift%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="sidebar-link">Swift错误处理</a></li><li><a href="/topic/Swift/Swift%E5%8D%8F%E8%AE%AE/" class="sidebar-link">Swift协议</a></li><li><a href="/topic/Swift/Swift%E5%88%9D%E5%A7%8B%E5%8C%96%E5%99%A8/" class="sidebar-link">Swift初始化器</a></li><li><a href="/topic/Swift/Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE/" aria-current="page" class="active sidebar-link">Swift结构体，类，枚举</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE/#枚举" class="sidebar-link">枚举</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE/#结构体" class="sidebar-link">结构体</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE/#类" class="sidebar-link">类</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE/#struct-与-class对比" class="sidebar-link">struct 与 class对比</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE/#枚举、结构体、类都可以定义方法" class="sidebar-link">枚举、结构体、类都可以定义方法</a></li><li class="sidebar-sub-header level2"><a href="/topic/Swift/Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE/#下标" class="sidebar-link">下标</a></li></ul></li><li><a href="/topic/Swift/Swift%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="sidebar-link">Swift内存管理</a></li><li><a href="/topic/Swift/Swift%E4%B8%8EOC/" class="sidebar-link">Swift与OC</a></li><li><a href="/topic/Swift/Swift%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%8C%E5%B8%B8%E9%87%8F%E3%80%81%E5%8F%98%E9%87%8F%E3%80%81%E5%85%83%E7%BB%84/" class="sidebar-link">Swift数据类型，常量、变量、元组</a></li><li><a href="/topic/Swift/Swift%E9%AB%98%E7%BA%A7%E8%BF%90%E7%AE%97%E7%AC%A6/" class="sidebar-link">Swift高级运算符</a></li><li><a href="/topic/Swift/Swift%E6%96%B9%E6%B3%95%E3%80%81%E9%97%AD%E5%8C%85/" class="sidebar-link">Swift方法、闭包</a></li><li><a href="/topic/Swift/Swift%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/" class="sidebar-link">Swift模式匹配</a></li><li><a href="/topic/Swift/Swift%E5%B1%9E%E6%80%A7%EF%BC%8C%E5%8D%95%E4%BE%8B/" class="sidebar-link">Swift属性，单例</a></li><li><a href="/topic/Swift/Swift%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" class="sidebar-link">Swift访问控制</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=topic" title="分类" data-v-06225672>topic</a></li><li data-v-06225672><a href="/categories/?category=Swift" title="分类" data-v-06225672>Swift</a></li><li data-v-06225672><a href="/categories/?category=Swift%E7%BB%93%E6%9E%84%E4%BD%93%EF%BC%8C%E7%B1%BB%EF%BC%8C%E6%9E%9A%E4%B8%BE" title="分类" data-v-06225672>Swift结构体，类，枚举</a></li></ul> <div class="info" data-v-06225672><!----> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2023-03-08</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">Swift结构体，类，枚举<!----></h1> <!----> <div class="theme-vdoing-content content__default"><h2 id="枚举"><a href="#枚举" class="header-anchor">#</a> 枚举</h2> <h3 id="枚举的定义"><a href="#枚举的定义" class="header-anchor">#</a> 枚举的定义</h3> <div class="language- extra-class"><pre class="language-text"><code>    // 枚举的定义
+    enum Season {case spring; case summer; case autumn; case winter}
+    
+    enum Season1 {
+        case spring
+        case summer
+        case autumn
+        case winter
+    }
+    
+    enum Seaso2 { case spring, summer, autumn, winter }
+    
+</code></pre></div><h3 id="枚举关联值"><a href="#枚举关联值" class="header-anchor">#</a> 枚举关联值</h3> <p>有时将枚举的成员值跟其他类型的值关联存储在一起，会非常有用</p> <div class="language-swift extra-class"><pre class="language-swift"><code>    <span class="token comment">//关联值</span>
+    <span class="token keyword">enum</span> <span class="token class-name">Date</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token function">digit</span><span class="token punctuation">(</span>year<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> month<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> day<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span>
+        <span class="token keyword">case</span> <span class="token function">string</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">var</span> date <span class="token operator">=</span> <span class="token class-name">Date</span><span class="token punctuation">.</span><span class="token function">digit</span><span class="token punctuation">(</span>year<span class="token punctuation">:</span> <span class="token number">2021</span><span class="token punctuation">,</span> month<span class="token punctuation">:</span> <span class="token number">01</span><span class="token punctuation">,</span> day<span class="token punctuation">:</span> <span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    date <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token function">string</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;20210120&quot;</span></span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">switch</span> date <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">digit</span><span class="token punctuation">(</span>year<span class="token punctuation">:</span> a<span class="token punctuation">,</span> month<span class="token punctuation">:</span> b<span class="token punctuation">,</span> day<span class="token punctuation">:</span> c<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">&quot;-&quot;</span></span><span class="token punctuation">,</span> b<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">&quot;-&quot;</span></span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token keyword">let</span> <span class="token punctuation">.</span><span class="token function">string</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;c&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">switch</span> date <span class="token punctuation">{</span>
+    <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">digit</span><span class="token punctuation">(</span>year<span class="token punctuation">:</span> <span class="token keyword">let</span> a<span class="token punctuation">,</span> month<span class="token punctuation">:</span> <span class="token number">02</span><span class="token punctuation">,</span> day<span class="token punctuation">:</span> <span class="token keyword">let</span> c<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">&quot;-&quot;</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">&quot;01&quot;</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">&quot;-&quot;</span></span><span class="token punctuation">,</span> c<span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">string</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;20210118&quot;</span></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;20210118&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">case</span> <span class="token punctuation">.</span><span class="token function">string</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;20210119&quot;</span></span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;20210119&quot;</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">default</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;other&quot;</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h3 id="枚举原始值"><a href="#枚举原始值" class="header-anchor">#</a> 枚举原始值</h3> <p>枚举成员可以使用相同类型的默认值预先对应，这个默认值叫做：原始值。<strong>原始值不占用枚举类型的内存</strong></p> <p>如果枚举的原始值类型是Int、String，Swift会自动分配原始值</p> <div class="language- extra-class"><pre class="language-text"><code>    //原始值
+    enum Season3:String {
+        case spring = &quot;春天&quot;
+        case summer = &quot;夏天&quot;
+        case autumn = &quot;秋天&quot;
+        case winter = &quot;冬天&quot;
+    }
+    
+    var season = Season3.winter;
+    season = .autumn
+    print(season) //autumn
+    print(season.rawValue) //秋天
+    print(Season3.spring.rawValue) //春天
+    
+    enum Season4 : Int { case spring, summer, autumn, winter }//默认0123
+    enum Season5 : Int { case spring = 1, summer, autumn = 5, winter }//默认1256
+    
+    
+</code></pre></div><h3 id="递归枚举-indirect"><a href="#递归枚举-indirect" class="header-anchor">#</a> 递归枚举 indirect</h3> <p>递归枚举需要加上indirect 关键字</p> <div class="language- extra-class"><pre class="language-text"><code>	 //递归枚举
+    indirect enum Count {
+        case num(Int)
+        case sum(Count, Count)
+        case difference(Count, Count)
+    }
+    
+    enum Count2 {
+        case num(Int)
+        indirect case sum(Count2, Count2)
+        indirect case difference(Count2, Count2)
+    }
+</code></pre></div><h3 id="占用内存"><a href="#占用内存" class="header-anchor">#</a> 占用内存</h3> <ol><li>只有原始值的枚举，所占的内存一般都是1个字节</li> <li>如果有附加值，那么枚举值所占的空间，就是附加值所需最大的空间+ 1个字节。只有一个枚举值情况下不需要+1</li></ol> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">enum</span> <span class="token class-name">Password</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">case</span> <span class="token function">number</span><span class="token punctuation">(</span><span class="token class-name">Int</span><span class="token punctuation">,</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> 
+  <span class="token keyword">case</span> other 
+<span class="token punctuation">}</span>
+<span class="token class-name">MemoryLayout</span><span class="token operator">&lt;</span><span class="token class-name">Password</span><span class="token operator">&gt;</span><span class="token punctuation">.</span>stride <span class="token comment">// 40, 分配占用的空间大小 </span>
+<span class="token class-name">MemoryLayout</span><span class="token operator">&lt;</span><span class="token class-name">Password</span><span class="token operator">&gt;</span><span class="token punctuation">.</span>size <span class="token comment">// 33, 实际用到的空间大小 </span>
+<span class="token class-name">MemoryLayout</span><span class="token operator">&lt;</span><span class="token class-name">Password</span><span class="token operator">&gt;</span><span class="token punctuation">.</span>alignment <span class="token comment">// 8, 对齐参数</span>
+
+<span class="token keyword">var</span> pwd <span class="token operator">=</span> <span class="token class-name">Password</span><span class="token punctuation">.</span><span class="token function">number</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span> 
+pwd <span class="token operator">=</span> <span class="token punctuation">.</span>other 
+<span class="token class-name">MemoryLayout</span><span class="token punctuation">.</span><span class="token function">stride</span><span class="token punctuation">(</span>ofValue<span class="token punctuation">:</span> pwd<span class="token punctuation">)</span> <span class="token comment">// 40</span>
+<span class="token class-name">MemoryLayout</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span>ofValue<span class="token punctuation">:</span> pwd<span class="token punctuation">)</span> <span class="token comment">// 33 </span>
+<span class="token class-name">MemoryLayout</span><span class="token punctuation">.</span><span class="token function">alignment</span><span class="token punctuation">(</span>ofValue<span class="token punctuation">:</span> pwd<span class="token punctuation">)</span> <span class="token comment">// 8</span>
+</code></pre></div><h2 id="结构体"><a href="#结构体" class="header-anchor">#</a> 结构体</h2> <h3 id="结构体定义"><a href="#结构体定义" class="header-anchor">#</a> 结构体定义</h3> <div class="language- extra-class"><pre class="language-text"><code>	struct Date {
+        var year: Int = 2021
+        var month: Int
+        var day: Int
+  }
+  var date = Date(year: 2019, month: 6, day: 23)
+  //传入所有成员值，用以初始化所有成员（存储属性，Stored Property）
+</code></pre></div><h3 id="构造方法"><a href="#构造方法" class="header-anchor">#</a> 构造方法</h3> <p>所有的结构体都有一个编译器自动生成的初始化器（initializer，初始化方法、构造器、构造方法）</p> <p>编译器会根据情况，可能会为结构体生成多个初始化器，宗旨是：<strong>保证所有成员都有初始值</strong></p> <p>一旦在定义结构体时自定义了初始化器，编译器就不会再帮它自动生成其他初始化器</p> <h3 id="内存结构"><a href="#内存结构" class="header-anchor">#</a> 内存结构</h3> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">struct</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> 
+	<span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span> 
+  <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">0</span> 
+  <span class="token keyword">var</span> origin<span class="token punctuation">:</span> <span class="token class-name">Bool</span> <span class="token operator">=</span> <span class="token boolean">false</span> 
+<span class="token punctuation">}</span> 
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">MemoryLayout</span><span class="token operator">&lt;</span><span class="token class-name">Point</span><span class="token operator">&gt;</span><span class="token punctuation">.</span>size<span class="token punctuation">)</span> <span class="token comment">// 17 </span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">MemoryLayout</span><span class="token operator">&lt;</span><span class="token class-name">Point</span><span class="token operator">&gt;</span><span class="token punctuation">.</span>stride<span class="token punctuation">)</span> <span class="token comment">// 24 </span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">MemoryLayout</span><span class="token operator">&lt;</span><span class="token class-name">Point</span><span class="token operator">&gt;</span><span class="token punctuation">.</span>alignment<span class="token punctuation">)</span> <span class="token comment">// 8</span>
+</code></pre></div><h2 id="类"><a href="#类" class="header-anchor">#</a> 类</h2> <h3 id="类的定义"><a href="#类的定义" class="header-anchor">#</a> 类的定义</h3> <div class="language- extra-class"><pre class="language-text"><code>	 class Student {
+        var age: Int = 18
+        var name: String = &quot;xiaoming&quot;
+    }
+</code></pre></div><h3 id="类的初始化"><a href="#类的初始化" class="header-anchor">#</a> 类的初始化</h3> <p>类的定义和结构体类似，但编译器并没有为类自动生成可以传入成员值的初始化器</p> <p>如果类的所有成员都在定义的时候指定了初始值，编译器会为类生成无参的初始化器</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">var</span> x<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">10</span> 
+  <span class="token keyword">var</span> y<span class="token punctuation">:</span> <span class="token class-name">Int</span> <span class="token operator">=</span> <span class="token number">20</span> 
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="struct-与-class对比"><a href="#struct-与-class对比" class="header-anchor">#</a> struct 与 class对比</h2> <h3 id="struct是值类型-class是引用类型。"><a href="#struct是值类型-class是引用类型。" class="header-anchor">#</a> struct是值类型，class是引用类型。</h3> <p>值类型的变量直接包含它们的数据，对于值类型都有它们自己的数据副本，因此对一个变量操作不可能影响另一个变量。</p> <p>引用类型的变量存储对他们的数据引用，因此后者称为对象，因此对一个变量操作可能影响另一个变量所引用的对象。</p> <h3 id="二者的本质区别"><a href="#二者的本质区别" class="header-anchor">#</a> 二者的本质区别：</h3> <p>struct是深拷贝，值拷贝，拷贝的是内容；为了提升性能，String、Array、Dictionary、Set采取了Copy On Write的技术。仅当有“写”操作时，才会真正执行拷贝操作。不需要修改的，尽量定义成let</p> <p>class是浅拷贝，引用拷贝，拷贝的是指针。在Mac、iOS中的malloc函数分配的内存大小总是16的倍数。通过class_getInstanceSize可以得知：类的对象至少需要占用多少内存</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">11</span>
+  <span class="token keyword">var</span> test <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token number">22</span>
+<span class="token punctuation">}</span> 
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+<span class="token function">class_getInstanceSize</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span>of<span class="token punctuation">:</span> p<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 40 class_getInstanceSize(Point.self)</span>
+</code></pre></div><h3 id="property的初始化不同"><a href="#property的初始化不同" class="header-anchor">#</a> property的初始化不同：</h3> <p>class 在初始化时不能直接把 property 放在 默认的constructor 的参数里，而是需要自己创建一个带参数的constructor；</p> <p>而struct可以，把属性放在默认的constructor 的参数里。</p> <h3 id="immutable变量"><a href="#immutable变量" class="header-anchor">#</a> immutable变量：</h3> <p>swift的可变内容和不可变内容用var和let来甄别，如果初始为let的变量再去修改会发生编译错误。</p> <p>struct遵循这一特性；class不存在这样的问题。</p> <h3 id="mutating-function"><a href="#mutating-function" class="header-anchor">#</a> mutating function：</h3> <p>struct 和 class 的差別是 struct 的 function 要去改变 property 的值的时候要加上 mutating，而 class 不用。</p> <h3 id="继承"><a href="#继承" class="header-anchor">#</a> 继承：</h3> <p>struct不可以继承，class可以继承。</p> <p>struct比class更轻量：struct分配在栈中，class分配在堆中。</p> <h2 id="枚举、结构体、类都可以定义方法"><a href="#枚举、结构体、类都可以定义方法" class="header-anchor">#</a> 枚举、结构体、类都可以定义方法</h2> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">class</span> <span class="token class-name">Size</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">var</span> width <span class="token operator">=</span> <span class="token number">10</span> 
+  <span class="token keyword">var</span> height <span class="token operator">=</span> <span class="token number">10</span> 
+  <span class="token keyword">func</span> <span class="token function-definition function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;width=</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">width</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, height=</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">height</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">)</span> 
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token class-name">Size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+s<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// width=10, height=10</span>
+
+
+<span class="token keyword">struct</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">10</span> 
+  <span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token number">10</span> 
+  <span class="token keyword">func</span> <span class="token function-definition function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;x=</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">x</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">, y=</span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">y</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">)</span> 
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+p<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// x=10, y=10</span>
+
+
+<span class="token keyword">enum</span> <span class="token class-name">PokerFace</span> <span class="token punctuation">:</span> <span class="token class-name">Character</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">case</span> spades <span class="token operator">=</span> <span class="token string-literal"><span class="token string">&quot;♠&quot;</span></span><span class="token punctuation">,</span> hearts <span class="token operator">=</span> <span class="token string-literal"><span class="token string">&quot;♥&quot;</span></span><span class="token punctuation">,</span> diamonds <span class="token operator">=</span> <span class="token string-literal"><span class="token string">&quot;♦&quot;</span></span><span class="token punctuation">,</span> clubs <span class="token operator">=</span> <span class="token string-literal"><span class="token string">&quot;♣&quot;</span></span> 
+  <span class="token keyword">func</span> <span class="token function-definition function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">&quot;face is </span><span class="token interpolation-punctuation punctuation">\(</span><span class="token interpolation">rawValue</span><span class="token interpolation-punctuation punctuation">)</span><span class="token string">&quot;</span></span><span class="token punctuation">)</span> 
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> pf <span class="token operator">=</span> <span class="token class-name">PokerFace</span><span class="token punctuation">.</span>hearts 
+pf<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// face is ♥</span>
+
+</code></pre></div><h3 id="方法占用对象的内存么"><a href="#方法占用对象的内存么" class="header-anchor">#</a> 方法占用对象的内存么？</h3> <p>不占用</p> <p>方法的本质就是函数</p> <p>方法、函数都存放在代码段</p> <h2 id="下标"><a href="#下标" class="header-anchor">#</a> 下标</h2> <p>使用subscript可以给任意类型（枚举、结构体、类）增加下标功能，有些地方也翻译为：下标脚本</p> <p>subscript的语法类似于实例方法、计算属性，本质就是方法（函数）</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token comment">// subscript中定义的返回值类型决定了 get方法的返回值类型 pset方法中newValue的类型</span>
+
+<span class="token comment">//subscript可以接受多个参数，并且类型任意</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0.0</span>
+  <span class="token keyword">subscript</span><span class="token punctuation">(</span>index<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Double</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">set</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span> 
+        x <span class="token operator">=</span> newValue 
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span> 
+        y <span class="token operator">=</span> newValue 
+      <span class="token punctuation">}</span> 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">get</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> x 
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> y 
+      <span class="token punctuation">}</span> 
+      <span class="token keyword">return</span> <span class="token number">0</span> 
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">11.1</span>
+p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">22.2</span>
+
+<span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token comment">// 11.1 </span>
+<span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>y<span class="token punctuation">)</span> <span class="token comment">// 22.2 </span>
+<span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 11.1 </span>
+<span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 22.2</span>
+
+</code></pre></div><p>subscript可以没有set方法，但必须要有get方法</p> <p>如果只有get方法，可以省略get</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0.0</span>
+  <span class="token keyword">subscript</span><span class="token punctuation">(</span>index<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Double</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">get</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> x 
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> y 
+      <span class="token punctuation">}</span> 
+      <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0.0</span>
+  <span class="token keyword">subscript</span><span class="token punctuation">(</span>index<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Double</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">return</span> x 
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> index <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">return</span> y 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">return</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>下标可以设置参数标签</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0.0</span> 
+  <span class="token keyword">subscript</span><span class="token punctuation">(</span>index i<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Double</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">return</span> x 
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">return</span> y 
+    <span class="token punctuation">}</span> 
+    <span class="token keyword">return</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+p<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">22.2</span> 
+<span class="token function">print</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span>index<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 22.2</span>
+</code></pre></div><p>下标可以是类型方法</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">class</span> <span class="token class-name">Sum</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">static</span> <span class="token keyword">subscript</span><span class="token punctuation">(</span>v1<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> v2<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">return</span> v1 <span class="token operator">+</span> v2 
+  <span class="token punctuation">}</span> 
+<span class="token punctuation">}</span> 
+
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token class-name">Sum</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 30</span>
+
+</code></pre></div><p>结构体、类作为返回值对比</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> 
+	<span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">class</span> <span class="token class-name">PointManager</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">var</span> point <span class="token operator">=</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+  <span class="token keyword">subscript</span><span class="token punctuation">(</span>index<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">get</span> <span class="token punctuation">{</span> point <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">struct</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> y <span class="token operator">=</span> <span class="token number">0</span> 
+<span class="token punctuation">}</span> 
+<span class="token keyword">class</span> <span class="token class-name">PointManager</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">var</span> point <span class="token operator">=</span> <span class="token class-name">Point</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+  <span class="token keyword">subscript</span><span class="token punctuation">(</span>index<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">set</span> <span class="token punctuation">{</span> point <span class="token operator">=</span> newValue <span class="token punctuation">}</span> 
+    <span class="token keyword">get</span> <span class="token punctuation">{</span> point <span class="token punctuation">}</span> 
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接收多个参数的下标</p> <div class="language-swift extra-class"><pre class="language-swift"><code><span class="token keyword">class</span> <span class="token class-name">Grid</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> data <span class="token operator">=</span> <span class="token punctuation">[</span> 
+    <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+    <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span> 
+  <span class="token punctuation">]</span> 
+  <span class="token keyword">subscript</span><span class="token punctuation">(</span>row<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">,</span> column<span class="token punctuation">:</span> <span class="token class-name">Int</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token class-name">Int</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">set</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">guard</span> row <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> row <span class="token operator">&lt;</span> <span class="token number">3</span> <span class="token operator">&amp;&amp;</span> column <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> column <span class="token operator">&lt;</span> <span class="token number">3</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> 
+      <span class="token punctuation">}</span>
+      data<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>column<span class="token punctuation">]</span> <span class="token operator">=</span> newValue
+    <span class="token punctuation">}</span> <span class="token keyword">get</span> <span class="token punctuation">{</span> 
+      <span class="token keyword">guard</span> row <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> row <span class="token operator">&lt;</span> <span class="token number">3</span> <span class="token operator">&amp;&amp;</span> column <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> column <span class="token operator">&lt;</span> <span class="token number">3</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+        <span class="token keyword">return</span> <span class="token number">0</span> 
+      <span class="token punctuation">}</span> 
+      <span class="token keyword">return</span> data<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>column<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> grid <span class="token operator">=</span> <span class="token class-name">Grid</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">77</span>
+grid<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">88</span>
+grid<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">99</span>
+<span class="token function">print</span><span class="token punctuation">(</span>grid<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+</code></pre></div></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><!----> <!----></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/topic/%E9%9F%B3%E8%A7%86%E9%A2%91/"><div>
+            音视频
+            <!----></div></a> <span class="date">03-08</span></dt></dl><dl><dd>02</dd> <dt><a href="/posts/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"><div>
+            docker常用命令
+            <!----></div></a> <span class="date">03-08</span></dt></dl><dl><dd>03</dd> <dt><a href="/topic/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"><div>
+            网络协议
+            <!----></div></a> <span class="date">03-08</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><!----> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2015-2023
+    <span>LuckyXYJ | <a href="http://beian.miit.gov.cn/">豫ICP备2021029639号</a></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.405a0211.js" defer></script><script src="/assets/js/2.7f06bbfc.js" defer></script><script src="/assets/js/36.f18c6a65.js" defer></script>
+  </body>
+</html>
